@@ -1,0 +1,65 @@
+import { loadTasksFromStorage } from "./utils/localStorage.js";
+import { setupAddModal } from "./modals/addModal.js";
+import { setupEditModal } from "./modals/editModal.js";
+
+import { renderTodoTasks } from "./render/renderTodo.js";
+import { renderDoingTasks } from "./render/renderDoing.js";
+import { renderDoneTasks } from "./render/renderDone.js";
+
+// DOM Elements
+const todoContainer = document.getElementById("todo-container");
+const doingContainer = document.getElementById("doing-container");
+const doneContainer = document.getElementById("done-container");
+
+const modal = document.getElementById("edit-modal");
+const titleInput = document.getElementById("modal-title");
+const descriptionInput = document.getElementById("modal-description");
+const statusSelect = document.getElementById("modal-status");
+const closeModalBtn = document.getElementById("close-modal");
+
+const addModal = document.getElementById("add-modal");
+const addTaskBtn = document.getElementById("add-task-btn");
+const closeAddModalBtn = document.getElementById("close-add-modal");
+const saveNewTask = document.getElementById("save-new-task");
+
+const newTaskInputs = [
+  document.getElementById("add-modal-title"),
+  document.getElementById("add-modal-description"),
+  document.getElementById("add-modal-status"),
+];
+
+async function init() {
+  const savedTasks = await loadTasksFromStorage();
+
+  const { openModal } = setupEditModal(
+    modal,
+    titleInput,
+    descriptionInput,
+    statusSelect,
+    closeModalBtn
+  );
+
+  setupAddModal(
+    savedTasks,
+    addTaskBtn,
+    closeAddModalBtn,
+    saveNewTask,
+    newTaskInputs,
+    addModal
+  );
+
+  renderTodoTasks(savedTasks, todoContainer, openModal);
+  renderDoingTasks(savedTasks, doingContainer, openModal);
+  renderDoneTasks(savedTasks, doneContainer, openModal);
+}
+
+init();
+
+// Responsive Button
+const updateBtnText = () => {
+  addTaskBtn.innerText = window.innerWidth <= 768 ? "+" : "+ Add New Task";
+};
+updateBtnText();
+window.addEventListener("resize", updateBtnText);
+
+//localStorage.clear();
