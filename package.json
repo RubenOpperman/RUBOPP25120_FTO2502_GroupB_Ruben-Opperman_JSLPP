@@ -1,0 +1,24 @@
+{
+  "name": "rubopp25120_fto2502_groupb_ruben-opperman_jsl01",
+  "version": "1.0.0",
+  "description": "Before starting this project, refer to the provided Figma design for layout, styling, and responsiveness details: https://www.figma.com/design/y7bFCUYL5ZHfPeojACBXg2/Challenge-1-%7C-JSL?node-id=0-1&t=yngAIXXKnJfH7Jj3-1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RubenOpperman/RUBOPP25120_FTO2502_GroupB_Ruben-Opperman_JSL01.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RubenOpperman/RUBOPP25120_FTO2502_GroupB_Ruben-Opperman_JSL01/issues"
+  },
+  "homepage": "https://github.com/RubenOpperman/RUBOPP25120_FTO2502_GroupB_Ruben-Opperman_JSL01#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.4",
+    "tailwindcss": "^4.1.4"
+  }
+}
