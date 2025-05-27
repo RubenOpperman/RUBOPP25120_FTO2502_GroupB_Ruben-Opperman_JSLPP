@@ -1,9 +1,16 @@
+import { saveTasksToStorage } from "../utils/localStorage.js";
+
 export function setupEditModal(
   modal,
   titleInput,
   descriptionInput,
   statusSelect,
-  closeModalBtn
+  closeModalBtn,
+  saveBtn,
+  tasks,
+  todoContainer,
+  doingContainer,
+  doneContainer
 ) {
   let selectedTask = null;
 
@@ -24,6 +31,22 @@ export function setupEditModal(
   }
 
   closeModalBtn.addEventListener("click", closeModal);
+
+  saveBtn.addEventListener("click", () => {
+    if (!selectedTask) return;
+
+    selectedTask.title = titleInput.value;
+    selectedTask.description = descriptionInput.value;
+    selectedTask.status = statusSelect.value;
+
+    saveTasksToStorage(tasks);
+
+    renderTodoTasks(tasks, todoContainer, openModal);
+    renderDoingTasks(tasks, doingContainer, openModal);
+    renderDoneTasks(tasks, doneContainer, openModal);
+
+    modal.close();
+  });
 
   return { openModal, closeModal };
 }

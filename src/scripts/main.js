@@ -17,6 +17,9 @@ const descriptionInput = document.getElementById("modal-description");
 const statusSelect = document.getElementById("modal-status");
 const closeModalBtn = document.getElementById("close-modal");
 
+const deleteTaskBtn = document.getElementById("Delete-task-btn");
+const saveTask = document.getElementById("Save-task-btn");
+
 const addModal = document.getElementById("add-modal");
 const addTaskBtn = document.getElementById("add-task-btn");
 const closeAddModalBtn = document.getElementById("close-add-modal");
@@ -31,12 +34,17 @@ const newTaskInputs = [
 async function init() {
   const savedTasks = await loadTasksFromStorage();
 
-  const { openModal } = setupEditModal(
+  const { openModal, closeModal } = setupEditModal(
     modal,
     titleInput,
     descriptionInput,
     statusSelect,
-    closeModalBtn
+    closeModalBtn,
+    saveTask,
+    savedTasks,
+    todoContainer,
+    doingContainer,
+    doneContainer
   );
 
   setupAddModal(
