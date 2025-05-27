@@ -14,8 +14,15 @@ export function setupAddModal(
   closeBtn.addEventListener("click", () => addModal.close());
 
   saveBtn.addEventListener("click", () => {
+    let maxId = 0;
+    savedTasks.forEach((savedTasks) => {
+      if (savedTasks.id >= maxId) {
+        maxId = savedTasks.id + 1;
+      }
+    });
+
     const newTask = {
-      id: savedTasks.length + 1,
+      id: maxId,
       title: titleInput.value,
       description: descInput.value,
       status: statusSelect.value,

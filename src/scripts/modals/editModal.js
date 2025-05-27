@@ -10,7 +10,8 @@ export function setupEditModal(
   tasks,
   todoContainer,
   doingContainer,
-  doneContainer
+  doneContainer,
+  deleteBtn
 ) {
   let selectedTask = null;
 
@@ -29,6 +30,26 @@ export function setupEditModal(
     descriptionInput.value = "";
     statusSelect.value = "";
   }
+
+  deleteBtn.addEventListener("click", (event) => {
+    if (!selectedTask) return;
+
+    let ConfirmDeleteResult = confirm("Do you want to delete this task?");
+    if (ConfirmDeleteResult == true) {
+      let index = tasks.findIndex((user) => user.id === selectedTask.id);
+
+      tasks.splice(index, 1);
+      saveTasksToStorage(tasks);
+
+      renderTodoTasks(tasks, todoContainer, openModal);
+      renderDoingTasks(tasks, doingContainer, openModal);
+      renderDoneTasks(tasks, doneContainer, openModal);
+    } else {
+      event.preventDefault();
+    }
+
+    modal.close();
+  });
 
   closeModalBtn.addEventListener("click", closeModal);
 

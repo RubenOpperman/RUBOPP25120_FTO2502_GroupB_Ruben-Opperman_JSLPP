@@ -34,7 +34,7 @@ const newTaskInputs = [
 async function init() {
   const savedTasks = await loadTasksFromStorage();
 
-  const { openModal, closeModal } = setupEditModal(
+  const { openModal } = setupEditModal(
     modal,
     titleInput,
     descriptionInput,
@@ -44,7 +44,8 @@ async function init() {
     savedTasks,
     todoContainer,
     doingContainer,
-    doneContainer
+    doneContainer,
+    deleteTaskBtn
   );
 
   setupAddModal(
