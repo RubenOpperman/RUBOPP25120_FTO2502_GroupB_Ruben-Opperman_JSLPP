@@ -46,6 +46,7 @@ export function setupEditModal(
       renderDoneTasks(tasks, doneContainer, openModal);
     } else {
       event.preventDefault();
+      return;
     }
 
     modal.close();

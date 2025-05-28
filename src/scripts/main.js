@@ -6,6 +6,8 @@ import { renderTodoTasks } from "./render/renderTodo.js";
 import { renderDoingTasks } from "./render/renderDoing.js";
 import { renderDoneTasks } from "./render/renderDone.js";
 
+import { toggleSidebar } from "./sidebar.js";
+
 // DOM Elements
 const todoContainer = document.getElementById("todo-container");
 const doingContainer = document.getElementById("doing-container");
@@ -24,6 +26,12 @@ const addModal = document.getElementById("add-modal");
 const addTaskBtn = document.getElementById("add-task-btn");
 const closeAddModalBtn = document.getElementById("close-add-modal");
 const saveNewTask = document.getElementById("save-new-task");
+
+const wrapper = document.getElementById("wrapper");
+const nav = document.getElementById("nav");
+const closeSidebarBtn = document.getElementById("Close-sidebar-button");
+const body = document.getElementById("body");
+const outerContainer = document.getElementById("outer-container");
 
 const newTaskInputs = [
   document.getElementById("add-modal-title"),
@@ -71,4 +79,10 @@ const updateBtnText = () => {
 updateBtnText();
 window.addEventListener("resize", updateBtnText);
 
+closeSidebarBtn.addEventListener("click", toggleSidebar);
+
 //localStorage.clear();
+
+const MobileIconButton = document.getElementById("icon-button");
+
+MobileIconButton.addEventListener("click");
