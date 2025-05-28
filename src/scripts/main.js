@@ -7,7 +7,7 @@ import { renderDoingTasks } from "./render/renderDoing.js";
 import { renderDoneTasks } from "./render/renderDone.js";
 
 import { toggleSidebar } from "./sidebar.js";
-
+import { mobileSidebar } from "./mobileSidebar.js";
 // DOM Elements
 const todoContainer = document.getElementById("todo-container");
 const doingContainer = document.getElementById("doing-container");
@@ -81,8 +81,6 @@ window.addEventListener("resize", updateBtnText);
 
 closeSidebarBtn.addEventListener("click", toggleSidebar);
 
+mobileSidebar();
+
 //localStorage.clear();
-
-const MobileIconButton = document.getElementById("icon-button");
-
-MobileIconButton.addEventListener("click");
