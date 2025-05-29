@@ -26,15 +26,16 @@
     >
       <div class="flex">
         <img
-          src="/assets/favicon.svg"
-          class="mb-14 mt-8 ml-8 w-[20px] lg:w-[40px] h-auto hidden md:block"
+          src="/assets/logo-dark.svg"
+          class="mb-14 mt-8 ml-8 w-[150px] h-auto hidden dark:md:block"
           alt="Kanban logo"
         />
-        <h4
-          class="mb-14 mt-8 ml-4 w-[30px] h-auto hidden md:block text-2xl text-primary-font-color Dark:text-primary-font-color lg:text-5xl font-medium"
-        >
-          Kanban
-        </h4>
+
+        <img
+          src="/assets/logo-light.svg"
+          alt="Kanban logo"
+          class="mb-14 mt-8 ml-8 w-[150px] h-auto hidden md:block dark:hidden"
+        />
       </div>
 
       <div>
@@ -59,7 +60,9 @@
         id="darkModeToggle"
       >
         <div class="flex mx-auto items-center">
-          <span>☀️</span>
+          <span>
+            <img src="/assets/icon-light-theme.svg" alt="sun icon" />
+          </span>
 
           <button id="Theme-toggle-desktop">
             <div
@@ -72,13 +75,13 @@
             </div>
           </button>
 
-          <span>🌑</span>
+          <span><img src="/assets/icon-dark-theme.svg" alt="moon icon" /></span>
         </div>
       </div>
     </div>
     <div class="z-50 my-0 col-start-1 hidden md:block">
       <button
-        class="py-4 dark:bg-[#635FC7] lg:w-[270px] md:w-[180px] rounded-br-[100px] rounded-tr-[100px] text-[#635FC7] dark:text-primary-font-color text-sm font-bold hover:bg-[#A8A4FF]"
+        class="py-4 dark:bg-[#635FC7] bg-secondary-color lg:w-[270px] md:w-[180px] rounded-br-[100px] rounded-tr-[100px] text-[#635FC7] dark:text-primary-font-color text-sm font-bold hover:bg-[#A8A4FF]"
         id="Close-sidebar-button"
       >
         🚫 Hide Sidebar
@@ -95,11 +98,12 @@
       >
         <div class="flex items-center border-l-[#E4EBFA] border-l-1">
           <img
-            src="/assets/favicon.svg"
+            src="/assets/Group 15.svg"
             alt="kanban icon"
             class="md:hidden block w-9 h-auto pl-4 cursor-pointer"
             id="icon-button"
           />
+
           <h2
             class="text-lg md:text-2xl md:pt-8 md:pb-9 pl-4 py-5 md:pl-6 text-primary-font-color dark:text-primary-dark-font-color leading-[30px] md:block hidden"
           >
@@ -362,7 +366,9 @@ back to crush this challenge."
         <div
           class="flex items-center justify-center ml-5 bg-secondary-color dark:bg-[#635FC7] rounded-lg py-2"
         >
-          <span>☀️</span>
+          <span>
+            <img src="/assets/icon-light-theme.svg" alt="sun icon" />
+          </span>
           <label class="relative inline-flex items-center cursor-pointer">
             <button id="Theme-toggle-mobile">
               <div
@@ -375,7 +381,7 @@ back to crush this challenge."
               </div>
             </button>
           </label>
-          <span>🌑</span>
+          <span><img src="/assets/icon-dark-theme.svg" alt="moon icon" /></span>
         </div>
       </div>
     </div>
