@@ -8,6 +8,8 @@ import { renderDoneTasks } from "./render/renderDone.js";
 
 import { toggleSidebar } from "./sidebar.js";
 import { mobileSidebar } from "./mobileSidebar.js";
+
+import { ToggleTheme } from "./Theme.js";
 // DOM Elements
 const todoContainer = document.getElementById("todo-container");
 const doingContainer = document.getElementById("doing-container");
@@ -82,5 +84,7 @@ window.addEventListener("resize", updateBtnText);
 closeSidebarBtn.addEventListener("click", toggleSidebar);
 
 mobileSidebar();
+
+ToggleTheme();
 
 //localStorage.clear();
