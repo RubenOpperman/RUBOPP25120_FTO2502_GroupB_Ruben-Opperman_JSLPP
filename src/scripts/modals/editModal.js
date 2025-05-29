@@ -1,5 +1,20 @@
 import { saveTasksToStorage } from "../utils/localStorage.js";
 
+/**
+ * this function opens a modal and closes a modal where you can edit tasks or delete them and also view the task content
+ * @param {modal} modal this modal contains a task's data.
+ * @param {string} titleInput - title of task
+ * @param {string} descriptionInput - discription of task
+ * @param {string} statusSelect - status of task
+ * @param {button} closeModalBtn - button closes the modal
+ * @param {button} saveBtn - button saves the data to the local storage.
+ * @param {array} tasks - array of objects containing id, title, discription and status.
+ * @param {div} todoContainer - div container containing todo tasks
+ * @param {div} doingContainer- div container containing doing tasks
+ * @param {div} doneContainer- div container containing done tasks
+ * @param {button} deleteBtn - button deletes a task
+ * @returns this function returns the open and close functions for the modals.
+ */
 export function setupEditModal(
   modal,
   titleInput,
@@ -15,6 +30,10 @@ export function setupEditModal(
 ) {
   let selectedTask = null;
 
+  /**
+   * This function opens a modal of a task
+   * @param {object} task
+   */
   function openModal(task) {
     selectedTask = task;
     titleInput.value = task.title;
@@ -23,6 +42,9 @@ export function setupEditModal(
     modal.showModal();
   }
 
+  /**
+   * This funciton closes the modal of a task.
+   */
   function closeModal() {
     modal.close();
     selectedTask = null;

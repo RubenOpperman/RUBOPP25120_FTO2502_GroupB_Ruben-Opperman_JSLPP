@@ -4,6 +4,9 @@ const closeSidebarBtn = document.getElementById("Close-sidebar-button");
 const body = document.getElementById("body");
 const outerContainer = document.getElementById("outer-container");
 
+/**
+ * This function toggles the sidebar on desktop with a click of a button that also changes the button's appearence
+ */
 export function toggleSidebar() {
   const isHidden = nav.classList.contains("md:hidden");
 

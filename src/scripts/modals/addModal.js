@@ -1,5 +1,14 @@
 import { saveTasksToStorage } from "../utils/localStorage.js";
 
+/**
+ *
+ * @param {array} savedTasks - an array of objects containing id, title, discription, status.
+ * @param {button} addTaskBtn - button that opens a modal where you can add a task
+ * @param {button} closeBtn -button that closes a modal where you can add a task.
+ * @param {button} saveBtn - This button saves the the new task
+ * @param {array} inputs - contains title, description , status from a single task
+ * @param {modal} addModal - a modal where you can add a task.
+ */
 export function setupAddModal(
   savedTasks,
   addTaskBtn,

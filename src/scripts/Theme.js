@@ -10,6 +10,9 @@ const desktopThemeToggleCircle = document.getElementById(
 
 const html = document.documentElement;
 
+/**
+ * This funciton toggles the dark theme and light theme when the user clicks on a toggle button and the button also changes when clicked for feedback.
+ */
 export function ToggleTheme() {
   desktopThemeToggle.addEventListener("click", () => {
     html.classList.toggle("dark");

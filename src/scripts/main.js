@@ -41,6 +41,9 @@ const newTaskInputs = [
   document.getElementById("add-modal-status"),
 ];
 
+/**
+ * This function retrieves the data that was fetched from the api or the local storage.
+ */
 async function init() {
   const savedTasks = await loadTasksFromStorage();
 
@@ -72,19 +75,19 @@ async function init() {
   renderDoneTasks(savedTasks, doneContainer, openModal);
 }
 
-init();
-
-// Responsive Button
+/**
+ * This function changes the button's text depending on the screen size.
+ */
 const updateBtnText = () => {
   addTaskBtn.innerText = window.innerWidth <= 768 ? "+" : "+ Add New Task";
 };
-updateBtnText();
-window.addEventListener("resize", updateBtnText);
 
+window.addEventListener("resize", updateBtnText);
 closeSidebarBtn.addEventListener("click", toggleSidebar);
 
+init();
+updateBtnText();
 mobileSidebar();
-
 ToggleTheme();
 
 //localStorage.clear();

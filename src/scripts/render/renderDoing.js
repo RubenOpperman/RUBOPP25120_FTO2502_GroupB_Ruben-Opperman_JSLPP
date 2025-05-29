@@ -1,3 +1,10 @@
+/**
+ *This function populates the tasks in the html in their respective fields sorting in status.
+ * @param {array} tasks is an array of objects containing id, title, description and status.
+ * @param {parent div element} container is a div
+ * @param {function} openModal is a funciton that opens a modal
+ */
+
 export function renderDoingTasks(tasks, container, openModal) {
   tasks.forEach((task) => {
     if (task.status === "doing") {
