@@ -89,5 +89,3 @@ init();
 updateBtnText();
 mobileSidebar();
 ToggleTheme();
-
-//localStorage.clear();
