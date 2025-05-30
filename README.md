@@ -123,3 +123,5 @@ Run with live server and explore!!
 https://www.veed.io/view/2c7ccac4-73c7-4156-901e-9ae40f861fb1?panel=share
 
 ## 7. Deployment Link:
+
+https://kanban-task-manager-17264836.netlify.app/?
